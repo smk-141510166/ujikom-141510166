@@ -11,8 +11,8 @@
                 <thead>
                     <tr class="bg-primary">
                         <th><center>Id</th>
-                        <th><center>Id Kode Tunjangan</th>
-                        <th><center>Id Pegawai</th>
+                        <th><center>Tunjangan</th>
+                        <th><center>Nama Pegawai</th>
                         <th colspan="3"><center>Opsi</th>
                     </tr>
                 </thead>
@@ -26,6 +26,7 @@
                         <td> {{$data->pegawai->User->name}} </td>
                         <td><a href="{{route('tunjanganpegawai.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
                         <td><a data-toggle="modal" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
+                        @include('modals.delet',['url'=>route('pegawai.destroy',$data->id),'model'=>$data])
                          
                     </tr>
                 </tbody>

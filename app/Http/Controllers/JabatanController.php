@@ -29,9 +29,7 @@ class JabatanController extends Controller
      */
     public function create()
     {
-        $pegawai = pegawai::all();
-        $jabatan = jabatan::all();
-        return view ('jabatan.create', compact('pegawai','jabatan'));
+        return view('jabatan.create');
     }
 
     /**
@@ -80,6 +78,10 @@ class JabatanController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $jabatan=jabatan::find($id);
+        $jabatanupdate=Request::all();
+        $jabatan->update($jabatanupdate);
+        return redirect('jabatan');
     }
 
     /**

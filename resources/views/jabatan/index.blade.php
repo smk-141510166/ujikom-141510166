@@ -27,7 +27,7 @@
                         <td> {{$data->nama_jabatan}}</td>
                         <td> Rp.{{$data->besaran_uang}}</td>
                         <td><a href="{{route('jabatan.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
-                        <td><a data-toggle="modals" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
+                        <td><a data-toggle="modal" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
                         @include('modals.delet',['url'=>route('jabatan.destroy',$data->id),'model'=>$data])</td>
           
                     

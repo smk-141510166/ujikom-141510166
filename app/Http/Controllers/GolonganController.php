@@ -77,9 +77,9 @@ class GolonganController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dataUpdate=Request::all();
         $golongan=golongan::find($id);
-        $golongan->update($dataUpdate);
+        $golonganupdate=Request::all();
+        $golongan->update($golonganupdate);
         return redirect('golongan');
     }
 

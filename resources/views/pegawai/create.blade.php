@@ -104,26 +104,24 @@
                             <label for="id_jabatan" class="col-md-4 control-label">Id Jabatan</label>
 
                             <div class="col-md-6">
-                                <input id="id_jabatan" type="text" class="form-control" name="id_jabatan" value="{{ old('id_jabatan') }}" required autofocus>
-
-                                @if ($errors->has('id_jabatan'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('id_jabatan') }}</strong>
-                                    </span>
-                                @endif
+                               <select class="form-control" name="id_golongan">
+                                @foreach ($jabatan as $data)
+                                <option value="{{ $data->id }}">{{ $data->nama_jabatan }}</option>
+                                @endforeach
+                            </select>
                             </div>
                         </div><br>
 
-                        <div class="control-group">
-                            <label class="control-label">Id Golongan</label>
-                            <div class="controls">
-                                <select class="form-control col-md-5 col-xs-12" name="id_golongan">
-                                    @foreach ($golongan as $data)
-                                    <option value="{{ $data->id }}">{{ $data->id_golongan }}</option>
-                                    @endforeach
-                                </select>
+                        <label for="id_golongan" class="col-md-4 control-label">Id Golongan</label>
+
+                            <div class="col-md-6">
+                                 <select class="form-control" name="id_golongan">
+                                @foreach ($golongan as $data)
+                                <option value="{{ $data->id }}">{{ $data->nama_golongan }}</option>
+                                @endforeach
+                            </select>
                             </div>
-                        </div><br><br>
+                        </div><br>
 
                         <div class="form-group{{ $errors->has('foto') ? ' has-error' : '' }}">
                             <label for="foto" class="col-md-4 control-label">Photo</label>

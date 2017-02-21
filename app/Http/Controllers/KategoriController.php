@@ -68,6 +68,10 @@ class KategoriController extends Controller
     public function edit($id)
     {
         //
+        $kategori=kategori_lembur::find($id);
+        $golongan=golongan::all();
+        $jabatan=jabatan::all();
+        return view('kategori.edit',compact('kategori','golongan','jabatan'));
     }
 
     /**
@@ -80,6 +84,10 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $kategori=kategori_lembur::find($id);
+        $kategoriupdate=Request::all();
+        $kategori->update($kategoriupdate);
+        return redirect('kategori');
     }
 
     /**

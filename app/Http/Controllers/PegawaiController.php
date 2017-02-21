@@ -7,7 +7,7 @@ use App\jabatan;
 use App\pegawai;
 use App\User;
 use App\Form;
-use App\Input;
+use Input;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;

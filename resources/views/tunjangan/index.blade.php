@@ -12,8 +12,8 @@
                     <tr class="bg-primary">
                         <th>Id</th>
                         <th>Kode Tunjangan</th>
-                        <th>Id Jabatan</th>
-                        <th>Id Golongan</th>
+                        <th>Jabatan</th>
+                        <th>Golongan</th>
                         <th>Status</th>
                         <th>Jumlah Anak</th>
                         <th>Besaran Uang</th>

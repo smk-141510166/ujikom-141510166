@@ -17,7 +17,7 @@
                     <div class="control-group">
                         <label class="control-label">Id Jabatan</label>
                         <div class="controls">
-                            <select class="span11" name="id_jabatan">
+                            <select class="form-control" name="id_jabatan">
                                 @foreach ($jabatan as $data)
                                 <option value="{{ $data->id }}">{{ $data->nama_jabatan }}</option>
                                 @endforeach
@@ -26,9 +26,9 @@
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label">Id Golongan</label>
+                        <label class="control-label">Id Jabatan</label>
                         <div class="controls">
-                            <select class="span11" name="id_golongan">
+                            <select class="form-control" name="id_golongan">
                                 @foreach ($golongan as $data)
                                 <option value="{{ $data->id }}">{{ $data->nama_golongan }}</option>
                                 @endforeach

@@ -12,8 +12,8 @@
                     <tr class="bg-primary">
                         <th>Id</th>
                         <th>Kode Lembur</th>
-                        <th>Id Jabatan</th>
-                        <th>Id Golongan</th>
+                        <th>Jabatan</th>
+                        <th>Golongan</th>
                         <th>Besaran Uang</th>
                         <th colspan="3"><center>Opsi</th>
                     </tr>

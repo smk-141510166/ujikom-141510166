@@ -1,7 +1,7 @@
 <div class="modal text-left fade" id="delete{{ $model->id}}">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form method="delete" action="{{url('delete')}}">
+			<form method="delete" action="{{url('delet')}}">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 				<h4 class="modal-title">{{{$title or "delete data"}}}</h4>
