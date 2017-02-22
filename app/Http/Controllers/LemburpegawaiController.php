@@ -68,6 +68,10 @@ class LemburpegawaiController extends Controller
     public function edit($id)
     {
         //
+        $lemburpegawai=lembur_pegawai::find($id);
+        $pegawai=pegawai::all();
+        $kategori=kategori_lembur::all();
+        return view('lemburpegawai.edit',compact('lemburpegawai','pegawai','kategori'));
     }
 
     /**
@@ -80,6 +84,10 @@ class LemburpegawaiController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $lemburpegawai=lembur_pegawai::find($id);
+        $lemburpegawaiupdate=Request::all();
+        $lemburpegawai->update($lemburpegawaiupdate);
+        return redirect('lemburpegawai');
     }
 
     /**

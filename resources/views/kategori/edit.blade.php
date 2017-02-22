@@ -8,7 +8,7 @@
                 <div class="panel-heading">Update</div>
 
                 <div class="panel-body">
-                    {!! Form::model($jabatan,['method' => 'PATCH','route'=>['jabatan.update',$jabatan->id]]) !!}
+                    {{ Form::open(array('autocomplete' => 'off', 'method' => 'PATCH', 'route' => array('kategori.update', $kategori->id))) }}
                 <div class="form-group">
                     {!! Form::label('kode_lembur', 'Kode Lembur') !!}
                     {!! Form::text('kode_lembur',null,['class'=>'form-control']) !!}

@@ -36,9 +36,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        $golongan = golongan::all();
-        $jabatan = jabatan::all();
-        return view ('pegawai.create', compact('golongan','jabatan'));
+        return view ('pegawai.create');
     }
 
     /**

@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.bt')
 
 @section('content')
 
+<body>
 <div class="container">
     <div class="panel panel-info">
         <div class="panel-heading">Jabatan</div>
@@ -20,15 +21,15 @@
 
                 <?php $id=1; ?>
                 @foreach ($jabatan as $data)
-                <tbody>
+                <tbody >
                     <tr> 
                         <td> {{$id++}} </td>
                         <td> {{$data->kode_jabatan}} </td>
                         <td> {{$data->nama_jabatan}}</td>
                         <td> Rp.{{$data->besaran_uang}}</td>
                         <td><a href="{{route('jabatan.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
-                        <td><a data-toggle="modal" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
-                        @include('modals.delet',['url'=>route('jabatan.destroy',$data->id),'model'=>$data])</td>
+                        <td><a data-toggle="modal" href="#delete{{$data->id}}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
+                        @include('modals.delet',['url'=>route('jabatan.destroy',$data->id),'modal'=>$data])</td>
           
                     
                     </tr>
@@ -38,5 +39,6 @@
         </div>
     </div>
 </div>
+</body>
 
 @endsection

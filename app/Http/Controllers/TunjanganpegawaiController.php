@@ -27,7 +27,7 @@ class TunjanganpegawaiController extends Controller
      */
     public function create()
     {
-         $tunjanganpegawai = tunjangan_pegawai::all();
+         $tunjanganpegawai = tunjangan_pegawai::find($id);
          $tunjangan = tunjangan::all();
          $pegawai = pegawai::all();
          return view ('tunjanganpegawai.create', compact('tunjanganpegawai','pegawai','tunjangan')); 

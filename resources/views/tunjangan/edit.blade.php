@@ -8,7 +8,8 @@
                 <div class="panel-heading">Update</div>
 
                 <div class="panel-body">
-                    {!! Form::model($jabatan,['method' => 'PATCH','route'=>['jabatan.update',$jabatan->id]]) !!}
+                    {{ Form::open(array('autocomplete' => 'off', 'method' => 'PATCH', 'route' => array('tunjangan.update', $tunjangan->id))) }}
+
                 <div class="form-group">
                     {!! Form::label('kode_tunjangan', 'Kode Tunjangan') !!}
                     {!! Form::text('kode_tunjangan',null,['class'=>'form-control']) !!}
@@ -42,8 +43,8 @@
                     </div>
 
                      <div class="form-group">
-                    {!! Form::label('jumlah_Anak', 'Jumlah Anak ') !!}
-                    {!! Form::text('jumlah_Anak',null,['class'=>'form-control']) !!}
+                    {!! Form::label('jumlah_anak', 'Jumlah Anak ') !!}
+                    {!! Form::text('jumlah_anak',null,['class'=>'form-control']) !!}
                     </div>
 
                 <div class="form-group">

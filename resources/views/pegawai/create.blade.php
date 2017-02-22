@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('pegawai.store') }}">
+                    {!!Form::open(['route'=>'pegawai.store','files'=>'true'])!!}
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -150,6 +150,7 @@
         </div>
     </div>
 </div>    
-</form>
+{!!Form::close()!!}
+
 
 @endsection

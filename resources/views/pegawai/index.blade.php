@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.bt')
 
 @section('content')
 
@@ -29,8 +29,8 @@
                         <td> {{$data->nip}} </td>
                         <td> {{$data->User->name}} </td>
                         <td> {{$data->User->email}} </td>
-                        <td> {{$data->id_jabatan}} </td>
-                        <td> {{$data->id_golongan}} </td>
+                        <td> {{$data->nama_jabatan}} </td>
+                        <td> {{$data->nama_golongan}} </td>
                         <td><img src="{{asset('/assets/image/pegawai/'.$data->foto.'')}}" height="100px" width="100px"></td>
                         <td><a href="{{route('pegawai.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
                         <td><a data-toggle="modal" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>

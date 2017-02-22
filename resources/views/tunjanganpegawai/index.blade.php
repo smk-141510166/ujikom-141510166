@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.bt')
 
 @section('content')
 
@@ -22,7 +22,7 @@
                 <tbody>
                     <tr> 
                         <td> {{$id++}} </td>
-                        <td> {{$data->tunjangan->kode_tunjangan}} </td>
+                        <td> {{$data->tunjanganpegawain->kode_tunjangan}} </td>
                         <td> {{$data->pegawai->User->name}} </td>
                         <td><a href="{{route('tunjanganpegawai.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
                         <td><a data-toggle="modal" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
