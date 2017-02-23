@@ -2,17 +2,13 @@
 
 @section('content')
     <h1>Edit</h1>
-    {!! Form::model($pegawai,['method' => 'PATCH','route'=>['pegawai.update',$pegawai->id]]) !!}
+    {!! Form::model($pegawai,['method' => 'PATCH','route'=>['pegawai.update',$pegawai->id],'files'=>true]) !!}
     
     <div class="form-group">
         {!! Form::label('nip', 'nip') !!}
         {!! Form::text('nip',null,['class'=>'form-control']) !!}
     </div>
     
-    <div class="form-group">
-        {!! Form::label('User->name', 'Nama') !!}
-        {!! Form::text('User->name',null,['class'=>'form-control']) !!}
-    </div>
     <div class="form-group{{ $errors->has('nip') ? ' has-error' : '' }}">
                           
                           <div class="control-group">

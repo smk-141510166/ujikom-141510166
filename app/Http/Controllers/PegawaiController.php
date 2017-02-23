@@ -119,10 +119,23 @@ class PegawaiController extends Controller
      */
     public function update($id)
    {
-       $pegawaiUpdate=Input::all();
-       $pegawai=pegawai::find($id);
-       $pegawai->update($pegawaiUpdate);
-       return redirect('pegawai');
+        $file=Input::file('foto');
+                $destinationPath = public_path().'/image';
+                $filename = str_random(6).'_'.$file->getClientOriginalName();
+                $uploadsucces=$file->move($destinationPath,$filename);
+                if (Input::hasFile('foto'))
+                {
+                $pegawai = pegawai::find($id);
+                $pegawai->nip = Input::get('nip');
+                $pegawai->id_jabatan= Input::get('id_jabatan');
+                $pegawai->id_golongan = Input::get('id_golongan');
+                }
+
+                $user=User::all();
+                //$pegawai->user_id = $pegawai->User->id;
+                $pegawai->foto = $filename;
+                $pegawai->update();
+                return redirect('/pegawai');
    }
 
     /**
