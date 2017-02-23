@@ -17,16 +17,20 @@ class pegawai extends Model
     }
     public function golongan()
     {
-    	return $this->hasMany('App\golongan','id_golongan');
+    	return $this->BelongsTo('App\golongan','id_golongan');
     }
     public function jabatan()
     {
-    	return $this->hasMany('App\jabatan','id_jabatan');
+    	return $this->BelongsTo('App\jabatan','id_jabatan');
     }
 
     public function tunjangan_pegawai()
     {
         return $this->hasone('App\tunjangan_pegawai','kode_tunjangan_id');
     }
+    public function lembur_pegawai()
+   {
+        return $this->hasMany('App\lembur_pegawai','id_pegawai');
+   }
     
 }

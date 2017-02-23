@@ -5,6 +5,11 @@
 <div class="container">
     <div class="panel panel-info">
         <div class="panel-heading">Pegawai</div>
+
+<div class="Form-group"><center>
+<Form action="{{url('pegawai')}}/?User->name=User->name">
+<input type="text" name="User->name" placeholder="cari"></Form></center></div>
+
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('pegawai/create')}}">Tambah Data</a><br><br>
             <table class="table table-striped table-bordered table-hover">
@@ -29,9 +34,9 @@
                         <td> {{$data->nip}} </td>
                         <td> {{$data->User->name}} </td>
                         <td> {{$data->User->email}} </td>
-                        <td> {{$data->nama_jabatan}} </td>
-                        <td> {{$data->nama_golongan}} </td>
-                        <td><img src="{{asset('/assets/image/pegawai/'.$data->foto.'')}}" height="100px" width="100px"></td>
+                        <td> {{$data->jabatan->nama_jabatan}} </td>
+                        <td> {{$data->golongan->nama_golongan}} </td>
+                        <td>  <img src = "{{asset('image/'.$data->foto )}}" height="35" width="35"></td>
                         <td><a href="{{route('pegawai.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
                         <td><a data-toggle="modal" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
                         

@@ -18,4 +18,8 @@ class tunjangan_pegawai extends Model
     {
     	return $this->BelongsTo('App\pegawai','kode_tunjangan_id');
     }
+    public function penggajian()
+   {
+      return $this->hasMany('App\penggajian','kode_tunjangan_id');
+   }
 }

@@ -36,7 +36,10 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        return view ('pegawai.create');
+        $pegawai = pegawai::all();
+        $golongan = golongan::all();
+        $jabatan = jabatan::all();
+        return view ('pegawai.create', compact('pegawai','golongan','jabatan'));
     }
 
     /**
@@ -48,7 +51,7 @@ class PegawaiController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
+                $this->validate($request, [
                 'name' => 'required',
                 'nip' => 'required|numeric|min:3|unique:pegawais',
                 'permission' => 'required|max:255',
@@ -64,7 +67,7 @@ class PegawaiController extends Controller
                 ]);
 
                 $file=Input::file('foto');
-                $destinationPath = public_path().'/assets/image/pegawai';
+                $destinationPath = public_path().'/image';
                 $filename = str_random(6).'_'.$file->getClientOriginalName();
                 $uploadsucces=$file->move($destinationPath,$filename);
                 if (Input::hasFile('foto'))

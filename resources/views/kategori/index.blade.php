@@ -5,6 +5,11 @@
 <div class="container">
     <div class="panel panel-info">
         <div class="panel-heading">Kategori Lembur</div>
+
+<div class="Form-group"><center>
+<Form action="{{url('kategori')}}/?kode_lembur=kode_lembur">
+<input type="text" name="kode_lembur" placeholder="cari"></Form></center></div>
+
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('kategori/create')}}">Tambah Data</a><br><br>
             <table class="table table-striped table-bordered table-hover">

@@ -51,7 +51,6 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
 
                         @else
                             <li class="dropdown">
@@ -72,22 +71,6 @@
                                         </form>
                                     </li>
 
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Daftar Halaman<span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ url('/jabatan') }}">Jabatan</a></li>
-                                    <li><a href="{{ url('/golongan') }}">Golongan</a></li>
-                                    <li><a href="{{ url('/kategori') }}">Kategori Lembur</a></li>
-                                    <li><a href="{{ url('/tunjangan') }}">Tunjangan</a></li>
-                                    <li><a href="{{ url('/pegawai') }}">Pegawai</a></li>
-                                    <li><a href="{{ url('/lemburpegawai') }}">Lembur Pegawai</a></li>
-                                    <li><a href="{{ url('/tunjanganpegawai') }}">Tunjangan Pegawai</a></li>
-                                    <li><a href="{{ url('/penggajian') }}">Penggajian</a></li>
                                 </ul>
                             </li>
                         @endif

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.bt')
 
 @section('content')
 <div class="container">
@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    {!!Form::open(['route'=>'pegawai.store','files'=>'true'])!!}
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('pegawai.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -98,30 +98,34 @@
                                     </span>
                                 @endif
                             </div>
-                        </div><br>
+                        </div><br><br>
 
-                    <div class="form-group{{ $errors->has('nip') ? ' has-error' : '' }}">
-                            <label for="id_jabatan" class="col-md-4 control-label">Id Jabatan</label>
+                    <div class="form-group{{ $errors->has('id_jabatan') ? ' has-error' : '' }}">
+                    <div class="control-group">
+                        <label for="id_jabatan" class="col-md-4 control-label" >Jabatan</label>
+                        <div class="col-md-6">
 
-                            <div class="col-md-6">
-                               <select class="form-control" name="id_golongan">
+                            <select class="form-control" name="id_jabatan">
                                 @foreach ($jabatan as $data)
                                 <option value="{{ $data->id }}">{{ $data->nama_jabatan }}</option>
                                 @endforeach
                             </select>
-                            </div>
-                        </div><br>
+                        </div>
+                    </div><br><br>
 
-                        <label for="id_golongan" class="col-md-4 control-label">Id Golongan</label>
+                    <div class="form-group{{ $errors->has('id_golongan') ? ' has-error' : '' }}">
+                    <div class="control-group">
+                        <label for="id_golongan" class="col-md-4 control-label" >Golongan</label>
+                        <div class="col-md-6">
 
-                            <div class="col-md-6">
-                                 <select class="form-control" name="id_golongan">
+                            <select class="form-control" name="id_golongan">
                                 @foreach ($golongan as $data)
                                 <option value="{{ $data->id }}">{{ $data->nama_golongan }}</option>
                                 @endforeach
                             </select>
-                            </div>
-                        </div><br>
+                        </div>
+                    </div><br><br>
+
 
                         <div class="form-group{{ $errors->has('foto') ? ' has-error' : '' }}">
                             <label for="foto" class="col-md-4 control-label">Photo</label>
@@ -150,7 +154,6 @@
         </div>
     </div>
 </div>    
-{!!Form::close()!!}
-
+</form>
 
 @endsection

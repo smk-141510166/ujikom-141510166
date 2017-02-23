@@ -23,7 +23,6 @@
                     <div class="control-group">
                         <label>Jumlah Jam Lembur </label>
                        <input class="form-control" type="text" name="jumlah_jam_lembur" placeholder="Masukkan Jumlah Jam">
-                    
                     </div>
                     
 				<div class="form-group">
@@ -35,12 +34,7 @@
                     <label>Gaji Pokok</label>
                     <input class="form-control" type="text" name="gaji_pokok" placeholder="Masukkan Gaji Pokok">
                 </div>
-
-                 <div class="form-group">
-                    <label>Total Gaji</label>
-                    <input class="form-control" type="text" name="total_gaji">
-                </div>
-
+                
                  <div class="form-group">
                     <label>Tanggal Pengambilan</label>
                     <input class="form-control" type="date" name="tanggal_pengembalian">

@@ -21,6 +21,6 @@ class golongan extends Model
     }
     public function pegawai()
     {
-        return $this->BelongsTo('App\pegawai','id_golongan');
+        return $this->hasMany('App\pegawai','id_golongan');
     }
 }

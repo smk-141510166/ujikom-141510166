@@ -6,6 +6,11 @@
 <div class="container">
     <div class="panel panel-info">
         <div class="panel-heading">Jabatan</div>
+
+<div class="Form-group"><center>
+<Form action="{{url('jabatan')}}/?nama_jabatan=nama_jabatan">
+<input type="text" name="nama_jabatan" placeholder="cari"></Form></center></div>
+
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('jabatan/create')}}">Tambah Data</a><br><br>
             <table class="table table-striped table-bordered table-hover">
