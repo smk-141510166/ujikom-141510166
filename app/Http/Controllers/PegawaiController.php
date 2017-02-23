@@ -103,9 +103,12 @@ class PegawaiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
-    }
+   {
+        $golongan = golongan::all();
+       $jabatan = jabatan::all();
+       $pegawai=pegawai::find($id);
+       return view('pegawai.edit',compact('pegawai','jabatan','golongan'));
+   }
 
     /**
      * Update the specified resource in storage.
@@ -114,10 +117,13 @@ class PegawaiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    public function update($id)
+   {
+       $pegawaiUpdate=Input::all();
+       $pegawai=pegawai::find($id);
+       $pegawai->update($pegawaiUpdate);
+       return redirect('pegawai');
+   }
 
     /**
      * Remove the specified resource from storage.

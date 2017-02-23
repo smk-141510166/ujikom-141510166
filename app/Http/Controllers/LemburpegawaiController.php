@@ -108,5 +108,7 @@ class LemburpegawaiController extends Controller
     public function destroy($id)
     {
         //
+        lembur_pegawai::find($id)->delete();
+        return redirect('lemburpegawai');
     }
 }

@@ -33,10 +33,13 @@
                         <td> {{$data->jabatan->nama_jabatan}}</td>
                         <td> {{$data->golongan->nama_golongan}}</td>
                         <td> Rp.{{$data->besaran_uang}}</td>
-                        <td><a href="{{route('kategori.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
-                        <td><a data-toggle="modal" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
-                                   
-                    
+                        <td><form method="POST" action="{{ route('kategori.destroy', $data->id) }}" accept-charset="UTF-8">
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                    <a href="{{route('kategori.edit', $data->id)}}" class="btn btn-primary">Edit</a>
+                                    <input type="submit" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');" value="Delete">
+                                </form>
+                            </td>
                     </tr>
                 </tbody>
                 @endforeach

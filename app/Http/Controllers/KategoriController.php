@@ -54,7 +54,7 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        $rules=['kode_lembur'=>'required|unique:kategoris',
+        $rules=['kode_lembur'=>'required|unique:kategori_lemburs',
                'id_jabatan'=>'required',
                'id_golongan'=>'required',
                'besaran_uang'=>'required|numeric|min:1'];
@@ -77,7 +77,7 @@ class KategoriController extends Controller
        {
        //alert()->success('Data Tersimpan');
        $kategori=Request::all();
-       kategori::create($kategori);
+       kategori_lembur::create($kategori);
        return redirect('kategori');
         }
     }
@@ -133,5 +133,7 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         //
+        kategori_lembur::find($id)->delete();
+        return redirect('kategori');
     }
 }
