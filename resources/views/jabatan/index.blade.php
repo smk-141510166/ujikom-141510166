@@ -27,23 +27,25 @@
                 <?php $id=1; ?>
                 @foreach ($jabatan as $data)
                 <tbody >
-                    <tr> 
+                    <tr align="center"> 
                         <td> {{$id++}} </td>
                         <td> {{$data->kode_jabatan}} </td>
                         <td> {{$data->nama_jabatan}}</td>
                         <td> Rp.{{$data->besaran_uang}}</td>
-                        <td><a href="{{route('jabatan.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
-                        <td><a data-toggle="modal" href="#delete{{$data->id}}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
-                        @include('modals.delet',['url'=>route('jabatan.destroy',$data->id),'modal'=>$data])</td>
-          
-                    
-                    </tr>
-                </tbody>
-                @endforeach
-            </table>
+                        <td><form method="POST" action="{{ route('jabatan.destroy', $data->id) }}" accept-charset="UTF-8">
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                    <a href="{{route('jabatan.edit', $data->id)}}" class="btn btn-primary">Edit</a>
+                                    <input type="submit" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </table>
+                </div>
+        
+            </div>
         </div>
     </div>
 </div>
-</body>
-
 @endsection

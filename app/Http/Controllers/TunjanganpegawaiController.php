@@ -17,7 +17,7 @@ class TunjanganpegawaiController extends Controller
     public function index()
     {
         $tunjanganpegawai = tunjangan_pegawai::with('tunjangan','pegawai')->get();
-        return view ('tunjanganpegawai.index', compact('tunjanganpegawai'));
+        return view ('tunjanganpegawai.index', compact('tunjanganpegawai','tunjangan'));
     }
 
     /**

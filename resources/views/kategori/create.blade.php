@@ -23,6 +23,11 @@
                                 @endforeach
                             </select>
                         </div>
+                        @if ($errors->has('id_jabatan'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('id_jabatan') }}</strong>
+                            </span>
+                        @endif
                     </div>
 
                     <div class="control-group">
@@ -33,12 +38,22 @@
                                 <option value="{{ $data->id }}">{{ $data->nama_golongan }}</option>
                                 @endforeach
                             </select>
+                            @if ($errors->has('id_golongan'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('id_golongan') }}</strong>
+                            </span>
+                        @endif
                         </div>
                     </div>
                     
 				<div class="form-group">
 					<label>Besaran Uang</label>
 					<input class="form-control" type="text" name="besaran_uang" placeholder="Masukkan Besaran Uang">
+                    @if ($errors->has('besaran_uang'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('besaran_uang') }}</strong>
+                            </span>
+                    @endif
 				</div>
 
 				<div class="form-group">
