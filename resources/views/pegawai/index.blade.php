@@ -6,9 +6,11 @@
     <div class="panel panel-info">
         <div class="panel-heading">Pegawai</div>
 
-<div class="Form-group"><center>
-<Form action="{{url('pegawai')}}/?User->name=User->name">
-<input type="text" name="User->name" placeholder="cari"></Form></center></div>
+<center><form action="pegawai/?nama_jabatan=nama_jabatan">
+        <div class="form-group input-group" align="center">
+            <input type="text" class="form-control" name="nama_jabatan" placeholder="cari berdasarkan nama jabatan"><button class="btn btn-info" type="submit"><i class="fa fa-search">Cari</i></button>
+        </div>
+</form></center>
 
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('pegawai/create')}}">Tambah Data</a><br><br>

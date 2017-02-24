@@ -6,9 +6,12 @@
     <div class="panel panel-info">
         <div class="panel-heading">Tunjangan Pegawai</div>
 
-<div class="Form-group"><center>
-<Form action="{{url('tunjanganpegawai')}}/?pegawai->nama_pegawai=pegawai->nama_pegawai">
-<input type="text" name="pegawai->nama_pegawai" placeholder="cari"></Form></center></div>
+<center><form action="tunjanganpegawai/?kode_tunjangan=kode_tunjangan">
+        <div class="form-group input-group" align="center">
+            <input type="text" class="form-control" name="kode_tunjangan" placeholder="cari berdasarkan tunjangan">&nbsp;&nbsp;<button class="btn btn-info" type="submit"><i class="fa fa-search">Cari</button>
+        </div>
+</form></center>
+
 
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('tunjanganpegawai/create')}}">Tambah Data</a><br><br>

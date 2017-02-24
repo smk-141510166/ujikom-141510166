@@ -6,9 +6,11 @@
     <div class="panel panel-info">
         <div class="panel-heading">Lembur Pegawai</div>
 
-<div class="Form-group"><center>
-<Form action="{{url('lemburpegawai')}}/?nama_pegawai=nama_pegawai">
-<input type="text" name="nama_pegawai" placeholder="cari"></Form></center></div>
+<center><form action="lemburpegawai/?kode_lembur=kode_lembur">
+        <div class="form-group input-group" align="center">
+            <input type="text" class="form-control" name="kode_lembur" placeholder="cari berdasarkan Kode Lembur"><button class="btn btn-info" type="submit"><i class="fa fa-search">Cari</i></button>
+        </div>
+</form></center>
 
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('lemburpegawai/create')}}">Tambah Data</a><br><br>
@@ -31,10 +33,13 @@
                         <td> {{$data->kategori_lembur->kode_lembur}} </td>
                         <td> {{$data->pegawai->User->name}}</td>
                         <td> {{$data->jumlah_jam}}</td>
-                        <td><a href="{{route('lemburpegawai.edit',$data->id)}}" class="btn btn-warning">Edit</a></td>
-                        <td><a data-toggle="modal" href="#delete{{ $data->id }}" class="btn btn-danger" title="Delete" data-toggle="tooltip">Hapus</a>
-                                   
-                    
+                        <td><form method="POST" action="{{ route('lemburpegawai.destroy', $data->id) }}" accept-charset="UTF-8">
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                    <a href="{{route('lemburpegawai.edit', $data->id)}}" class="btn btn-primary">Edit</a>
+                                    <input type="submit" class="btn btn-danger" onclick="return confirm('Anda yakin akan menghapus data ?');" value="Delete">
+                                </form>
+                            </td>
                     </tr>
                 </tbody>
                 @endforeach

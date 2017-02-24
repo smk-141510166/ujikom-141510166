@@ -7,9 +7,11 @@
     <div class="panel panel-info">
         <div class="panel-heading">Jabatan</div>
 
-<div class="Form-group"><center>
-<Form action="{{url('jabatan')}}/?nama_jabatan=nama_jabatan">
-<input type="text" name="nama_jabatan" placeholder="cari"></Form></center></div>
+<center><form action="jabatan/?nama_jabatan=nama_jabatan">
+        <div class="form-group input-group" align="center">
+            <input type="text" class="form-control" name="nama_jabatan" placeholder="cari berdasarkan nama jabatan"><button class="btn btn-info" type="submit"><i class="fa fa-search">Cari</i></button>
+        </div>
+</form></center>
 
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('jabatan/create')}}">Tambah Data</a><br><br>
@@ -42,6 +44,7 @@
                         </tr>
                         @endforeach
                     </table>
+                    {{$jabatan->links()}}
                 </div>
         
             </div>

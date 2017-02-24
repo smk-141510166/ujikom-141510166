@@ -6,9 +6,11 @@
     <div class="panel panel-info">
         <div class="panel-heading">Golongan</div>
 
-<div class="Form-group"><center>
-<Form action="{{url('golongan')}}/?nama_golongan=nama_golongan">
-<input type="text" name="nama_golongan" nama_golongan placeholder="cari"></Form></center></div>
+<center><form action="golongan/?nama_golongan=nama_golongan">
+        <div class="form-group input-group" align="center">
+            <input type="text" class="form-control" name="nama_golongan" placeholder="cari berdasarkan nama golongan"><button class="btn btn-info" type="submit"><i class="fa fa-search">Cari</i></button>
+        </div>
+</form></center>
 
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('golongan/create')}}">Tambah Data</a><br><br>

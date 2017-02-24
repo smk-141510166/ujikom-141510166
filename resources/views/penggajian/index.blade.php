@@ -5,6 +5,12 @@
 <div class="container">
     <div class="panel panel-info">
         <div class="panel-heading">Penggajian</div>
+        <center><form action="penggajian/?nama_jabatan=nama_jabatan">
+        <div class="form-group input-group" align="center">
+            <input type="text" class="form-control" name="nama_jabatan" placeholder="cari berdasarkan nama jabatan"><button class="btn btn-info" type="submit"><i class="fa fa-search">Cari</i></button>
+        </div>
+</form></center>
+
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('penggajian/create')}}">Tambah Data</a><br><br>
             <table class="table table-striped table-bordered table-hover">

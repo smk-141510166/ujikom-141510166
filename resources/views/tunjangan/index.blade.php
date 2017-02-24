@@ -6,9 +6,11 @@
     <div class="panel panel-info">
         <div class="panel-heading">Tunjangan</div>
 
-<div class="Form-group"><center>
-<Form action="{{url('tunjangan')}}/?kode_tunjangan=kode_tunjangan">
-<input type="text" name="kode_tunjangan" placeholder="cari"></Form></center></div>
+<center><form action="tunjangan/?kode_tunjangan=kode_tunjangan">
+        <div class="form-group input-group" align="center">
+            <input type="text" class="form-control" name="kode_tunjangan" placeholder="cari berdasarkan kode tunjangan"><button class="btn btn-info" type="submit"><i class="fa fa-search">Cari</i></button>
+        </div>
+</form></center>
 
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('tunjangan/create')}}">Tambah Data</a><br><br>

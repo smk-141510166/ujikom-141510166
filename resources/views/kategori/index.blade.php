@@ -6,9 +6,11 @@
     <div class="panel panel-info">
         <div class="panel-heading">Kategori Lembur</div>
 
-<div class="Form-group"><center>
-<Form action="{{url('kategori')}}/?kode_lembur=kode_lembur">
-<input type="text" name="kode_lembur" placeholder="cari"></Form></center></div>
+<center><form action="kategori/?kode_lembur=kode_lembur">
+        <div class="form-group input-group" align="center">
+            <input type="text" class="form-control" name="kode_lembur" placeholder="cari berdasarkan kode lembur"><button class="btn btn-info" type="submit"><i class="fa fa-search">Cari</i></button>
+        </div>
+</form></center>
 
         <div class="panel-body">
         <a class="btn btn-success" href="{{url('kategori/create')}}">Tambah Data</a><br><br>

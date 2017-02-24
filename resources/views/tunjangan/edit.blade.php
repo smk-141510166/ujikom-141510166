@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.bt')
 
 @section('content')
 <div class="container">
@@ -8,8 +8,7 @@
                 <div class="panel-heading">Update</div>
 
                 <div class="panel-body">
-                    {{ Form::open(array('autocomplete' => 'off', 'method' => 'PATCH', 'route' => array('tunjangan.update', $tunjangan->id))) }}
-
+                {!! Form::model($tunjangan,['method' => 'PATCH','route'=>['tunjangan.update',$tunjangan->id]]) !!}
                 <div class="form-group">
                     {!! Form::label('kode_tunjangan', 'Kode Tunjangan') !!}
                     {!! Form::text('kode_tunjangan',null,['class'=>'form-control']) !!}
@@ -29,7 +28,7 @@
                     <div class="control-group">
                         <label class="control-label">Golongan</label>
                         <div class="controls">
-                            <select class="form-control" name="id_jabatan">
+                            <select class="form-control" name="id_golongan">
                                 @foreach ($golongan as $data)
                                 <option value="{{ $data->id }}">{{ $data->nama_golongan }}</option>
                                 @endforeach
